@@ -1,0 +1,29 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tte2027-exhibition-map",
+  "workers_dev": true,
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-25",
+  "observability": { "enabled": true, "head_sampling_rate": 0.1 },
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "tte2027-db",
+      "database_id": "REPLACE_WITH_D1_DATABASE_ID",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "r2_buckets": [
+    { "binding": "FILES", "bucket_name": "tte2027-files" }
+  ],
+  "vars": {
+    "EVENT_YEAR": "2027",
+    "PUBLIC_EVENT_NAME": "TTE 2027",
+    "PUBLICATION_MODE": "admin-controlled"
+  }
+}
